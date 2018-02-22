@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   get 'test', to: 'users#test'
 
   resources :favorites, only: [:index, :create, :update, :destroy]
+  resources :reviews, only: [:index, :create, :update, :destroy]
 
 end
