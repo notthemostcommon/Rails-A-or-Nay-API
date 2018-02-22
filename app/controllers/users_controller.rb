@@ -36,7 +36,6 @@ class UsersController < ApplicationController
 
     def authenticate(email, password)
         command = AuthenticateUser.call(email, password)
-    
         if command.success?
           render json: {
             access_token: command.result,

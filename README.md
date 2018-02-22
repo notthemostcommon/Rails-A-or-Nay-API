@@ -22,3 +22,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+- reference sites: https://www.codementor.io/omedale/simple-approach-to-rails-5-api-authentication-with-json-web-token-cpqbgrdo6
+
