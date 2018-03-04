@@ -1,6 +1,6 @@
 class AddColumnsToFaQs < ActiveRecord::Migration[5.1]
   def change
-    add_column :FAQs, :question, :string
-    add_column :FAQs, :answer, :string
+    add_column :faqs, :question, :string
+    add_column :faqs, :answer, :string
   end
 end

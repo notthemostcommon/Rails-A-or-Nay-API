@@ -1,15 +1,9 @@
-class ApplicationController < ActionController::API
-    before_action :authenticate_request
-    attr_reader :current_user
-    # helper_method :current_user
-    
-    include ExceptionHandler
-
-   
-    private
-    def authenticate_request
-      @current_user = AuthenticateApiRequest.call(request.headers).result
-      render json: { error: 'Not Authorized' }, status: 401 unless @current_user
-    end
-
+class ApplicationController < ActionController::Base
+  # Prevent CSRF attacks by raising an exception.
+  # For APIs, you may want to use :null_session instead.
+  protect_from_forgery with: :null_session
+  include SessionsHelper
+  def current_user
+    puts "session id: #{session} "
+  end
 end

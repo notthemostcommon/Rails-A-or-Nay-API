@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180222165606) do
+ActiveRecord::Schema.define(version: 20180304100216) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "faqs", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -52,6 +55,11 @@ ActiveRecord::Schema.define(version: 20180222165606) do
     t.datetime "updated_at", null: false
     t.string "f_name"
     t.string "l_name"
+    t.boolean "admin", default: false
+    t.string "remember_digest"
+    t.string "access_token"
+    t.string "reset_digest"
+    t.datetime "reset_sent_at"
   end
 
 end
